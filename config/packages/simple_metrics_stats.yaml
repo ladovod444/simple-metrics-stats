@@ -1,0 +1,22 @@
+search_replace:
+  config_files:
+    - '%kernel.project_dir%/.env'
+    - '%kernel.project_dir%/.env.local'
+    - '%kernel.project_dir%/.env.dev'
+    - '%kernel.project_dir%/config/packages/some.yaml'
+
+  tables:
+    settings:
+      columns: [value, config_json]
+      has_serialized: true
+    articles:
+      columns: [title, content]
+      has_serialized: false
+    users:
+      columns: [preferences]
+      has_serialized: true
+    product:
+      columns: [title, content]
+      has_serialized: false
+
+  backup_enabled: true

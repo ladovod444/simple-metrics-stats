@@ -1,0 +1,21 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: false
+
+  Ws\SimpleMetricsStatsBundle\:
+    resource: '../src/'
+    exclude:
+      - '../src/DependencyInjection/'
+      - '../src/SearchReplaceBundle.php'
+
+#  Ws\SimpleMetricsStatsBundle\Service\ConfigReplacer:
+#    arguments:
+#      $projectDir: '%kernel.project_dir%'
+#
+#  Ws\SimpleMetricsStatsBundle\Command\SearchReplaceCommand:
+#    arguments:
+#      $configFiles: '%search_replace.config_files%'
+#      $tables: '%search_replace.tables%'
+#    tags: ['console.command']
