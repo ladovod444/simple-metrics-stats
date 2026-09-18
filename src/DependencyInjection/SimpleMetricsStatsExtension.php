@@ -1,5 +1,27 @@
 <?php
 
+/*
+ *  Copyright 2026.  dvz.dev <admin@dvz.dev>
+ *
+ *  Permission is hereby granted, free of charge, to any person obtaining a copy
+ *  of this software and associated documentation files (the "Software"), to deal
+ *  in the Software without restriction, including without limitation the rights
+ *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+ *  copies of the Software, and to permit persons to whom the Software is furnished
+ *  to do so, subject to the following conditions:
+ *
+ *  The above copyright notice and this permission notice shall be included in all
+ *  copies or substantial portions of the Software.
+ *
+ *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+ *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+ *  FITNESS FOR A PARTICULAR PURPOSE AND NON INFRINGEMENT. IN NO EVENT SHALL THE
+ *  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+ *  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+ *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
+ *  THE SOFTWARE.
+ */
+
 declare(strict_types=1);
 
 namespace Ws\SimpleMetricsStatsBundle\DependencyInjection;
@@ -13,12 +35,12 @@ class SimpleMetricsStatsExtension extends Extension
 {
     public function load(array $configs, ContainerBuilder $container): void
     {
-//        $configuration = new Configuration();
-//        $config = $this->processConfiguration($configuration, $configs);
-//
-//        $container->setParameter('search_replace.config_files', $config['config_files']);
-//        $container->setParameter('search_replace.tables', $config['tables']);
-//        $container->setParameter('search_replace.backup_enabled', $config['backup_enabled']);
+        $configuration = new Configuration();
+        $config = $this->processConfiguration($configuration, $configs);
+
+        $container->setParameter('simple_metrics_stats.config_files', $config['config_files']);
+        $container->setParameter('simple_metrics_stats.tables', $config['tables']);
+        $container->setParameter('simple_metrics_stats.backup_enabled', $config['backup_enabled']);
 
         $loader = new YamlFileLoader($container, new FileLocator(__DIR__ . '/../../config'));
         $loader->load('services.yaml');

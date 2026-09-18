@@ -1,9 +1,9 @@
-search_replace:
+simple_metrics_stats:
   config_files:
     - '%kernel.project_dir%/.env'
     - '%kernel.project_dir%/.env.local'
     - '%kernel.project_dir%/.env.dev'
-    - '%kernel.project_dir%/config/packages/some.yaml'
+#    - '%kernel.project_dir%/config/packages/some.yaml'
 
   tables:
     settings:
